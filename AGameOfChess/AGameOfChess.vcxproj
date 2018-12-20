@@ -123,17 +123,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\ChessGame\ChessGame\Chess.cpp" />
-    <ClCompile Include="..\..\..\ChessGame\ChessGame\ChessBoard.cpp" />
-    <ClCompile Include="..\..\..\ChessGame\ChessGame\Piece.cpp" />
-    <ClCompile Include="..\..\..\ChessGame\ChessGame\Player.cpp" />
+    <ClCompile Include="Chess.cpp" />
+    <ClCompile Include="ChessBoard.cpp" />
+    <ClCompile Include="Piece.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\ChessGame\ChessGame\Chess.h" />
-    <ClInclude Include="..\..\..\ChessGame\ChessGame\ChessBoard.h" />
-    <ClInclude Include="..\..\..\ChessGame\ChessGame\Piece.h" />
-    <ClInclude Include="..\..\..\ChessGame\ChessGame\Player.h" />
+    <ClInclude Include="Chess.h" />
+    <ClInclude Include="ChessBoard.h" />
+    <ClInclude Include="Piece.h" />
+    <ClInclude Include="Player.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

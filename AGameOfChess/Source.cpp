@@ -1,6 +1,7 @@
 #include<iostream>
+#include"Piece.h"
+#include<SFML\Graphics.hpp>
 
-#include <SFML/Graphics.hpp>
 
 int main()
 {
@@ -16,6 +17,8 @@ int main()
 		std::cerr << "Unable to load background"<<std::endl;
 	sf::Sprite background(back);
 
+	Piece P;
+	P.assign('P', true, 1, 1);
 
 	window.setView(fullView);
 
@@ -31,7 +34,8 @@ int main()
 		}
 
 		window.clear();
-		window.draw(background);
+		//window.draw(background);
+		window.draw(P.icon);
 		window.display();
 	}
 
