@@ -1,5 +1,5 @@
 #include<iostream>
-#include"Piece.h"
+#include"Chess.h"
 #include<SFML\Graphics.hpp>
 
 
@@ -19,10 +19,24 @@ int main()
 
 	Piece P;
 	P.assign('P', true, 1, 1);
+	P.loadIcon();
 
 	window.setView(fullView);
 
+	ChessBoard b;
+	b.printmainBoard();
+	
 
+/*
+	sf::Texture t;
+	if(!t.loadFromFile("pieces/WhitePawn.png"))
+		std::cerr<<"NOT LOADING"<<std::endl;
+	sf::Sprite box(t);
+	sf::FloatRect dimentions = box.getLocalBounds();
+	std::cout << dimentions.width;
+	box.setOrigin((dimentions.width / 2), (dimentions.height / 2));
+	box.setPosition(210.f, 190.f);
+*/
 
 	while (window.isOpen())
 	{
@@ -34,8 +48,10 @@ int main()
 		}
 
 		window.clear();
-		//window.draw(background);
-		window.draw(P.icon);
+		window.draw(background);
+		//window.draw(P.icon);
+		b.displaymainBoard(window);
+		//window.draw(box);
 		window.display();
 	}
 

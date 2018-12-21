@@ -26,7 +26,7 @@ public:
 
 	void printmainBoard();
 	void printhiglightBoard();
-	//void displaymainBoard()
+	void displaymainBoard(sf::RenderWindow &window);
 		//sfml
 	//void displayhighlightBoard()
 		//sfml

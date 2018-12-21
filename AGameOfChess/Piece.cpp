@@ -36,8 +36,8 @@ void Piece::assign(char pType, bool pCol, int piecePosR, int piecePosC)
 	*/
 
 	//Load Icon for respective piece
-	void loadIcon();
-	void setPos();
+	loadIcon();
+	setPos();
 }
 
 bool Piece::isEqual(Piece & P)
@@ -48,52 +48,54 @@ bool Piece::isEqual(Piece & P)
 
 void Piece::loadIcon()
 {
-	std::string filename, color;
+	std::string piecename, color;
 
 	if (pieceColor == true)
 		color = "White";
 	else
 		color = "Black";
 
-
 	if (pieceType == 'P') {
-		filename = "Pawn";
+		piecename = "Pawn";
 	}
 	else if (pieceType == 'R') {
-		filename = "Rook";
+		piecename = "Rook";
 	}
 	else if (pieceType == 'B') {
-		filename = "Bishop";
+		piecename = "Bishop";
 	}
 	else if (pieceType == 'N') {
-		filename = "Knight";
+		piecename = "Knight";
 	}
 	else if (pieceType == 'K') {
-		filename = "King";
+		piecename = "King";
 	}
 	else if (pieceType == 'Q') {
-		filename = "Queen";
+		piecename = "Queen";
 	}
 	else if (pieceType == 'O') {
-		filename = "Empty";
+		piecename = "Empty";
 	}
 
-	std::cout << color + filename;
 
-	if (!image.loadFromFile(color + filename))
-		std::cerr << "Unable to load pieceIcon for " << color + filename << std::endl;
+	std::string filename = "pieces/" + color + piecename + ".png";
+	std::cout << filename;
+
+	if (!image.loadFromFile(filename))
+		std::cerr << "Unable to load pieceIcon for " << filename << std::endl;
 	icon.setTexture(image);
 
 }
 
 void Piece::setPos()
 {
-	Ox = 160.f + (piecePos.first * 100);
-	Oy = 140.f + (piecePos.second * 100);
+	Ox = 210.f + (piecePos.second * 100);
+	Oy = 190.f + (piecePos.first * 100);
 
 	sf::FloatRect dimentions = icon.getLocalBounds();
+	std::cout << dimentions.width;
+	icon.setOrigin((dimentions.width/2), (dimentions.height/2));
 
-	icon.setOrigin(dimentions.width / 2, dimentions.height / 2);
 	icon.setPosition(Ox, Oy);
 }
 

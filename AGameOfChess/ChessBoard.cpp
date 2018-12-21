@@ -98,6 +98,15 @@ void ChessBoard::printhiglightBoard()
 	}
 }
 
+void ChessBoard::displaymainBoard(sf::RenderWindow &window)
+{
+	for (int i = 0; i < 8; ++i) {
+		for (int j = 0; j < 8; ++j) {
+			window.draw(mainBoard[i][j].icon);
+		}
+	}
+}
+
 
 
 ChessBoard::~ChessBoard()
